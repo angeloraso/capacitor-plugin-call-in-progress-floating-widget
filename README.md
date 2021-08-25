@@ -1,0 +1,1 @@
+# capacitor-plugin-call-in-progress-floating-widget
