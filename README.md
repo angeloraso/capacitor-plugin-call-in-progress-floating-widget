@@ -11,9 +11,39 @@ npx cap sync
 
 ## API
 
-<docgen-index></docgen-index>
+<docgen-index>
+
+* [`show(...)`](#show)
+* [`hide()`](#hide)
+
+</docgen-index>
 
 <docgen-api>
-<!-- run docgen to generate docs from the source -->
-<!-- More info: https://github.com/ionic-team/capacitor-docgen -->
+<!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
+
+### show(...)
+
+```typescript
+show(data: { seconds: number; }) => any
+```
+
+| Param      | Type                              |
+| ---------- | --------------------------------- |
+| **`data`** | <code>{ seconds: number; }</code> |
+
+**Returns:** <code>any</code>
+
+--------------------
+
+
+### hide()
+
+```typescript
+hide() => any
+```
+
+**Returns:** <code>any</code>
+
+--------------------
+
 </docgen-api>

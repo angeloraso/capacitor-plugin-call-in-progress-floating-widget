@@ -1,0 +1,39 @@
+{
+  "api": {
+    "name": "CallInProgressFloatingWidgetPlugin",
+    "slug": "callinprogressfloatingwidgetplugin",
+    "docs": "",
+    "tags": [],
+    "methods": [
+      {
+        "name": "show",
+        "signature": "(data: { seconds: number; }) => any",
+        "parameters": [
+          {
+            "name": "data",
+            "docs": "",
+            "type": "{ seconds: number; }"
+          }
+        ],
+        "returns": "any",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "show"
+      },
+      {
+        "name": "hide",
+        "signature": "() => any",
+        "parameters": [],
+        "returns": "any",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "hide"
+      }
+    ],
+    "properties": []
+  },
+  "interfaces": [],
+  "enums": []
+}
