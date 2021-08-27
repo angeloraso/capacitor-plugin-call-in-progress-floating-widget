@@ -16,6 +16,7 @@ public class CallInProgressFloatingWidget implements FloatingWidgetService.CallB
     private FloatingWidgetService floatingWidgetService;
     private Boolean mIsBound = false;
     private CallInProgressFloatingWidgetSettings settings;
+    private CallInProgressFloatingWidgetListener listener;
 
 
     CallInProgressFloatingWidget(Context context) {
@@ -58,6 +59,7 @@ public class CallInProgressFloatingWidget implements FloatingWidgetService.CallB
         Intent intent = new Intent("android.intent.action.FLOATING_WIDGET_SERVICE");
         intent.setPackage(context.getPackageName());
         this.settings = settings;
+        this.listener = listener;
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
           doBindService(intent);
         } else if (Settings.canDrawOverlays(context.getApplicationContext())) {
@@ -67,7 +69,7 @@ public class CallInProgressFloatingWidget implements FloatingWidgetService.CallB
 
     @Override
     public void onClick() {
-      openApp();
+      listener.onClick();
     }
 
     @Override
@@ -84,12 +86,6 @@ public class CallInProgressFloatingWidget implements FloatingWidgetService.CallB
 
     public void hide() {
       doUnbindService();
-    }
-
-    public void openApp() {
-      Intent intent = context.getPackageManager().getLaunchIntentForPackage(context.getPackageName());
-      context.startActivity(intent);
-      hide();
     }
 
 }

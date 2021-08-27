@@ -25,7 +25,7 @@ public class CallInProgressFloatingWidgetPlugin extends Plugin {
 
         floatingWidget.show(getSettings(call), new CallInProgressFloatingWidgetListener() {
           @Override
-          public void tapWidget() {
+          public void onClick() {
             call.resolve();
           }
         });

@@ -29,6 +29,7 @@ public class FloatingWidgetService extends Service {
   private IBinder mLocalbinder = new LocalBinder();
   private CallBack mCallBack;
   private Chronometer callDuration;
+  private Boolean floatingWidgetWasDestroyed = false;
 
   private int x_init_cord, y_init_cord, x_init_margin, y_init_margin;
 
@@ -362,14 +363,18 @@ public class FloatingWidgetService extends Service {
         mParams.x = 0 - (int) (current_x_cord * current_x_cord * step);
 
         // Update window manager for Floating Widget
-        mWindowManager.updateViewLayout(mFloatingWidgetView, mParams);
+        if (!floatingWidgetWasDestroyed) {
+          mWindowManager.updateViewLayout(mFloatingWidgetView, mParams);
+        }
       }
 
       public void onFinish() {
         mParams.x = 0;
 
         // Update window manager for Floating Widget
-        mWindowManager.updateViewLayout(mFloatingWidgetView, mParams);
+        if (!floatingWidgetWasDestroyed) {
+          mWindowManager.updateViewLayout(mFloatingWidgetView, mParams);
+        }
       }
     }.start();
   }
@@ -447,6 +452,7 @@ public class FloatingWidgetService extends Service {
   @Override
   public void onDestroy() {
     super.onDestroy();
+    floatingWidgetWasDestroyed = true;
 
     callDuration.stop();
 
