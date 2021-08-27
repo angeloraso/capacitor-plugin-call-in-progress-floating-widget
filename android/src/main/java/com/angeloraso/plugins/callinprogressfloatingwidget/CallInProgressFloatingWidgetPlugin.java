@@ -32,7 +32,7 @@ public class CallInProgressFloatingWidgetPlugin extends Plugin {
     }
 
     @PluginMethod
-    public void hide() {
+    public void hide(PluginCall call) {
       floatingWidget.hide();
     }
 
