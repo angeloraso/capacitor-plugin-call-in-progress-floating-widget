@@ -5,7 +5,7 @@ import type { CallInProgressFloatingWidgetPlugin } from './definitions';
 export class CallInProgressFloatingWidgetWeb
   extends WebPlugin
   implements CallInProgressFloatingWidgetPlugin {
-    async show(data: {seconds: number}): Promise<void> {
+    async show(data: {startTime: number}): Promise<void> {
       console.log((data));
       return;
     }  

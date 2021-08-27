@@ -24,12 +24,12 @@ npx cap sync
 ### show(...)
 
 ```typescript
-show(data: { seconds: number; }) => any
+show(data: { startTime: number; }) => any
 ```
 
-| Param      | Type                              |
-| ---------- | --------------------------------- |
-| **`data`** | <code>{ seconds: number; }</code> |
+| Param      | Type                                |
+| ---------- | ----------------------------------- |
+| **`data`** | <code>{ startTime: number; }</code> |
 
 **Returns:** <code>any</code>
 

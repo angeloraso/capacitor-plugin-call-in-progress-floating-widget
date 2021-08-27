@@ -7,12 +7,12 @@
     "methods": [
       {
         "name": "show",
-        "signature": "(data: { seconds: number; }) => any",
+        "signature": "(data: { startTime: number; }) => any",
         "parameters": [
           {
             "name": "data",
             "docs": "",
-            "type": "{ seconds: number; }"
+            "type": "{ startTime: number; }"
           }
         ],
         "returns": "any",

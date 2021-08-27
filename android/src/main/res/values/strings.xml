@@ -1,0 +1,4 @@
+<resources>
+  <string name="app_name">Call in progress floating widget</string>
+  <string name="draw_other_app_permission_denied">Draw over other app permission not available. Call in progress floating widget plugin won\'t work without permission. Please try again.</string>
+</resources>

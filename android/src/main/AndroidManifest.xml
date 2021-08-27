@@ -1,16 +1,16 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.angeloraso.plugins.callinprogressfloatingwidget">
 
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+  <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 
     <application>
 
         <service
-            android:name=".FloatingViewService"
+            android:name=".FloatingWidgetService"
             android:enabled="true"
             android:exported="true">
             <intent-filter>
-                <action android:name="android.intent.action.FLOATING_VIEW_SERVICE" />
+                <action android:name="android.intent.action.FLOATING_WIDGET_SERVICE" />
             </intent-filter>
         </service>
 

@@ -1,6 +1,6 @@
 export interface CallInProgressFloatingWidgetPlugin {
     show(data: {
-        seconds: number;
+        startTime: number;
     }): Promise<void>;
     hide(): Promise<{
         data: 'success' | 'error';
