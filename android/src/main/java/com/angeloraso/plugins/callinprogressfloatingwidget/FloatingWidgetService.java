@@ -290,7 +290,10 @@ public class FloatingWidgetService extends Service {
             param_remove.x = x_cord_remove;
             param_remove.y = y_cord_remove;
 
-            mWindowManager.updateViewLayout(removeFloatingWidgetView, param_remove);
+            // Update window manager for Floating Widget
+            if (!floatingWidgetWasDestroyed) {
+              mWindowManager.updateViewLayout(removeFloatingWidgetView, param_remove);
+            }
 
             // Set remove widget view visibility to VISIBLE
             removeFloatingWidgetView.setVisibility(View.VISIBLE);
@@ -314,7 +317,9 @@ public class FloatingWidgetService extends Service {
                 layoutParams.y = y_cord_remove + (Math.abs(removeFloatingWidgetView.getHeight() - mFloatingWidgetView.getHeight())) / 2;
 
                 // Update the layout with new X & Y coordinate
-                mWindowManager.updateViewLayout(mFloatingWidgetView, layoutParams);
+                if (!floatingWidgetWasDestroyed) {
+                  mWindowManager.updateViewLayout(mFloatingWidgetView, layoutParams);
+                }
 
                 break;
               } else {
@@ -329,7 +334,9 @@ public class FloatingWidgetService extends Service {
             layoutParams.y = y_cord_Destination;
 
             // Update the layout with new X & Y coordinate
-            mWindowManager.updateViewLayout(mFloatingWidgetView, layoutParams);
+            if (!floatingWidgetWasDestroyed) {
+              mWindowManager.updateViewLayout(mFloatingWidgetView, layoutParams);
+            }
             return true;
         }
         return false;
@@ -392,14 +399,18 @@ public class FloatingWidgetService extends Service {
         mParams.x = (int) (szWindow.x + (current_x_cord * current_x_cord * step) - mFloatingWidgetView.getWidth());
 
         // Update window manager for Floating Widget
-        mWindowManager.updateViewLayout(mFloatingWidgetView, mParams);
+        if (!floatingWidgetWasDestroyed) {
+          mWindowManager.updateViewLayout(mFloatingWidgetView, mParams);
+        }
       }
 
       public void onFinish() {
         mParams.x = szWindow.x - mFloatingWidgetView.getWidth();
 
         // Update window manager for Floating Widget
-        mWindowManager.updateViewLayout(mFloatingWidgetView, mParams);
+        if (!floatingWidgetWasDestroyed) {
+          mWindowManager.updateViewLayout(mFloatingWidgetView, mParams);
+        }
       }
     }.start();
   }
@@ -424,7 +435,10 @@ public class FloatingWidgetService extends Service {
 
       if (layoutParams.y + (mFloatingWidgetView.getHeight() + getStatusBarHeight()) > szWindow.y) {
         layoutParams.y = szWindow.y - (mFloatingWidgetView.getHeight() + getStatusBarHeight());
-        mWindowManager.updateViewLayout(mFloatingWidgetView, layoutParams);
+        // Update window manager for Floating Widget
+        if (!floatingWidgetWasDestroyed) {
+          mWindowManager.updateViewLayout(mFloatingWidgetView, layoutParams);
+        }
       }
 
       if (layoutParams.x != 0 && layoutParams.x < szWindow.x) {
