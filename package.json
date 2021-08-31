@@ -1,6 +1,6 @@
 {
   "name": "capacitor-plugin-call-in-progress-floating-widget",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "This plugin shows the status of a call in progress as a floating widget",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",

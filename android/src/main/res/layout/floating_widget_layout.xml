@@ -8,7 +8,7 @@
 
     <LinearLayout
       android:id="@+id/root_container"
-      android:background="@drawable/shape"
+      android:background="@drawable/floating_widget_shape"
       android:layout_width="wrap_content"
       android:layout_height="50dp"
       android:visibility="visible">
